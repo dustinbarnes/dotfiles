@@ -3,6 +3,7 @@
 !.aliases
 !.exports
 !.functions
+!.completions
 !.inputrc
 !.wgetrc
 !.gitignore
