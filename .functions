@@ -1,3 +1,9 @@
+# A simple cd-and-ls wrapper
+function cl() {
+    cd $1;
+    ls -lF;
+}
+
 # Simple calculator
 function calc() {
     local result=""
@@ -62,10 +68,52 @@ function s() {
     fi
 }
 
+# Catch-all extractor method. 
+# Usage: ex apache-*.tar.gz
+function ex() {
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjfv $1        ;;
+            *.tar.gz)    tar xzfv $1     ;;
+            *.tar.xz)    tar xJfv $1     ;;
+            *.bz2)       bunzip2 $1       ;;
+            *.rar)       rar x $1     ;;
+            *.gz)        gunzip $1     ;;
+            *.tar)       tar xfv $1        ;;
+            *.tbz2)      tar xjfv $1      ;;
+            *.tgz)       tar xzfv $1       ;;
+            *.zip)       unzip $1     ;;
+            *.Z)         uncompress $1  ;;
+            *.7z)        7z x $1    ;;
+            *)           echo "'$1' cannot be extracted via ex()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
 
+# Prints out all the colors available via tput
+function 256colors() {
+    ( x=`tput op` y=`printf %$((${COLUMNS}-6))s`;
+    for i in {0..256};
+    do
+    o=00$i;
+    echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;
+    done )
+}
 
-
-
-
-
-
+# Move the given file(s) to the Trash.
+function trash() {
+    local path
+    for path in "$@"; do
+        # Make relative paths "absolutey".
+        [ "${path:0:1}" = '/' ] || path="$PWD/$1";
+ 
+        # Execute the AppleScript to nudge Finder.
+        echo "$(cat <<-EOD
+            tell application "Finder"
+                delete POSIX file "${path//\"/\"}"
+            end
+        EOD)" | osascript;
+    done;
+}

@@ -8,7 +8,7 @@ prompt() {
         on)
             # Set up pre-prompt command and prompt format
             PROMPT_COMMAND='ret=$? ; history -a'
-            PS1='[\u@\h:\w]$(prompt vcs)$(prompt job)$(prompt ret)\$'
+            PS1='[\w]$(prompt vcs)$(prompt job)$(prompt ret)\n\$'
 
             # If Bash 4.0 is available, trim very long paths in prompt
             if ((${BASH_VERSINFO[0]} >= 4)); then
@@ -27,8 +27,8 @@ prompt() {
             # Check if we have non-bold bright green available
             if ((colors == 256)); then
                 format=$( {
-                    tput AF 10 || tput setaf 10 \
-                        || tput AF 10 0 0 || tput setaf 10 0 0
+                    tput AF 8 || tput setaf 8 \
+                        || tput AF 8 0 0 || tput setaf 8 0 0
                 } 2>/dev/null )
 
             # If we have only eight colors, use bold green to make it bright

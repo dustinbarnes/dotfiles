@@ -1,3 +1,9 @@
+# Allow sudo of simple aliases
+alias sudo='sudo '
+
+# Reload the profile chain
+alias reload="source $HOME/.profile"
+
 # Easier Navigation
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -11,6 +17,11 @@ alias dt="cd ~/Desktop"
 alias ls='ls -F'
 alias l='ls -l'
 alias la='ls -la'
+
+# The "oh shit" copy/move/delete safeguards
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
 
 # IP Addresses
 alias gip='dig +short myip.opendns.com @resolver1.opendns.com'
