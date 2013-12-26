@@ -1,0 +1,9 @@
+# Paging
+export PAGER=less
+export LESS=-FMi
+
+# Prompt
+export PS1="\h \e[30;1m\w\e[0m\n\$ "
+
+# Java Stuff
+export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=256m"

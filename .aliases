@@ -1,0 +1,25 @@
+# Easier Navigation
+alias ..='cd ..'
+alias ...='cd ../..'
+
+# Shortcuts
+alias db='cd ~/Dropbox'
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+
+# Listing Aliases
+alias ls='ls -F'
+alias l='ls -l'
+alias la='ls -la'
+
+# IP Addresses
+alias gip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias eip='ipconfig getifaddr en1'
+alias wip='ipconfig getifaddr en0'
+
+# Show/hide hidden files in Finder
+alias show_hidden="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide_hidden="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Lock screen (requires password to unlock)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
