@@ -32,5 +32,9 @@ alias wip='ipconfig getifaddr en0'
 alias show_hidden="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide_hidden="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
+# Use some alternate programs that I forget to type properly
+#   top -> htop
+command -v htop >/dev/null 2>&1 && alias top=htop
+
 # Lock screen (requires password to unlock)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
