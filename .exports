@@ -21,9 +21,8 @@ export LC_ALL="en_US.UTF-8"
 # Enable colored grep output
 export GREP_OPTIONS='--color=auto'
 
-# Paging
-export PAGER=less
-export LESS=-FMi
+# Common less options
+export LESS=-Mi
 
 # Java Stuff
 export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=256m"
