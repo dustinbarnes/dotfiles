@@ -15,8 +15,7 @@ alias dt="cd ~/Desktop"
 
 # Listing Aliases
 alias ls='ls -F'
-alias l='ls -l'
-alias la='ls -la'
+alias l='ls -Al'
 
 # The "oh shit" copy/move/delete safeguards
 alias cp='cp -i'
@@ -30,6 +29,9 @@ alias hide_hidden="defaults write com.apple.finder AppleShowAllFiles -bool false
 # Use some alternate programs that I forget to type properly
 #   top -> htop
 command -v htop >/dev/null 2>&1 && alias top=htop
+
+# Show a pretty directory tree from the current directory
+alias mytree="find . -type d | sed -e 1d -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|-/'"
 
 # Lock screen (requires password to unlock)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
