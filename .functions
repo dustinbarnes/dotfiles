@@ -4,6 +4,13 @@ function cl() {
     ls -lF;
 }
 
+# Get all of my IPs
+function ip () {
+    echo -e "WiFi:     `ipconfig getifaddr en0 2> /dev/null`"
+    echo -e "Wired:    `ipconfig getifaddr en1 2> /dev/null`"
+    echo -e "External: `dig +short myip.opendns.com @resolver1.opendns.com`"
+}
+
 # Simple calculator
 function calc() {
     local result=""
