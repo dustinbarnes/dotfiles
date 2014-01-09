@@ -31,14 +31,10 @@ function calc() {
 
 # Create a .tar.gz archive of current directory
 function targz() {
-    local tmpFile="${@%/}.tar"
-    tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1
+    local tmpFile="$(basename `pwd`).tar.gz"
+    tar -czvf "${tmpFile}" --exclude=".DS_Store" --exclude=".git" --exclude=".svn" --exclude "${tmpFile}" . || return 1
 
-    local cmd="gzip"
-
-    "${cmd}" -v "${tmpFile}" || return 1
-    [ -f "${tmpFile}" ] && rm "${tmpFile}"
-    echo "${tmpFile}.gz created successfully."
+    echo "${tmpFile} created successfully."
 }
 
 # Add note to Notes.app (OS X 10.8)
