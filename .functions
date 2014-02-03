@@ -39,7 +39,7 @@ function targz() {
 
 # Convert a jpg to png using apple's sips command
 function jpg2png() {
-    sips -s format png $1 --out $1.png
+    sips -s format png $1 --out ${1/jpg/png}
 }
 
 # Add note to Notes.app (OS X 10.8)
