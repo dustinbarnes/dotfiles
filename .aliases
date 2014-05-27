@@ -37,4 +37,7 @@ alias mytree="find . -type d | sed -e 1d -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # Mou (markdown editor; http://mouapp.com/)
-alias mou="open /Applications/Mou.app" 
+alias mou="open /Applications/Mou.app"
+
+# Use the Temperature Monitor CLI app when wanted
+alias temperature="/Applications/TemperatureMonitor.app/Contents/MacOS/tempmonitor -c -l -a"
