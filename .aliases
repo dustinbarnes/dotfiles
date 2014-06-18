@@ -41,3 +41,4 @@ alias mou="open /Applications/Mou.app"
 
 # Use the Temperature Monitor CLI app when wanted
 alias temperature="/Applications/TemperatureMonitor.app/Contents/MacOS/tempmonitor -c -l -a"
+

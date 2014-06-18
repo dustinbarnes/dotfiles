@@ -125,3 +125,7 @@ function trash() {
         EOD)" | osascript;
     done;
 }
+
+function eject() {
+    diskutil umount /Volumes/$1
+}
