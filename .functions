@@ -4,6 +4,11 @@ function cl() {
     ls -lF;
 }
 
+# Formats a man page as PDF, then supplies to Preview.app on stdin.
+pman() {
+    man -t "$@" | open -f -a Preview
+}
+
 # Get all of my IPs
 function ip () {
     echo -e "WiFi:     `ipconfig getifaddr en0 2> /dev/null`"
