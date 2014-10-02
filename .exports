@@ -28,6 +28,11 @@ export LESS=-Mi
 export MAVEN_OPTS="-Xmx1024m -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true"
 export JAVA_HOME="$(/usr/libexec/java_home)"
 
+# Assuming groovy is installed from brew
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
+
 # Docker config
 export DOCKER_HOST=tcp://192.168.33.10:2375
 
+# NodeJS Stuff (Installed from Brew)
+export NVM_DIR=~/.nvm

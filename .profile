@@ -49,5 +49,5 @@ shopt -s shift_verbose
 # Don't use PATH to find files to source
 shopt -u sourcepath
 
-
-[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
+# Load NVM (node version manager)
+source $(brew --prefix nvm)/nvm.sh

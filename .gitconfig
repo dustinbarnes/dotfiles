@@ -1,0 +1,14 @@
+[core]
+        pager = cat
+[user]
+	name = Dustin Barnes
+	email = dustin.barnes@gmail.com
+[push]
+	default = simple
+[aliases]
+        ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+        ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+        co = checkout
+        ci = commit
+
+
