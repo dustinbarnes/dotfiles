@@ -37,7 +37,7 @@ function calc() {
 # Create a .tar.gz archive of current directory
 function targz() {
     local tmpFile="$(basename `pwd`).tar.gz"
-    tar -czvf "${tmpFile}" --exclude=".DS_Store" --exclude=".git" --exclude=".svn" --exclude "${tmpFile}" . || return 1
+    tar -czvf "${tmpFile}" --exclude=".DS_Store" --exclude=".git" --exclude=".svn" --exclude "${tmpFile}" --exclude ".idea" . || return 1
 
     echo "${tmpFile} created successfully."
 }
@@ -138,5 +138,6 @@ function eject() {
 function java7() {
     export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home
     export PATH=$JAVA_HOME/bin:$PATH
+    export MAVEN_OPTS="$MAVEN_OPTS -XX:MaxPermSize=256m"
     echo "This session is now set to use Java7. This will change on every new terminal."
 }

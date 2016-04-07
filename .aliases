@@ -28,10 +28,7 @@ alias hide_hidden="defaults write com.apple.finder AppleShowAllFiles -bool false
 
 # Use some alternate programs that I forget to type properly
 #   top -> htop
-command -v htop >/dev/null 2>&1 && alias top=htop
-
-# Show a pretty directory tree from the current directory
-alias mytree="find . -type d | sed -e 1d -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|-/'"
+command -v htop >/dev/null 2>&1 && alias top=sudo htop
 
 # Lock screen (requires password to unlock)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
@@ -39,3 +36,5 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Use the Temperature Monitor CLI app when wanted
 alias temperature="/Applications/TemperatureMonitor.app/Contents/MacOS/tempmonitor -c -l -a"
 
+alias intellij="open -a 'IntelliJ IDEA 13'"
+alias notes="atom ~/Dropbox/Work/notes"
