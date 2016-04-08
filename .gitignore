@@ -1,15 +1,2 @@
-*
-!.path
-!.profile
-!.prompt
-!.aliases
-!.exports
-!.functions
-!.completions
-!.inputrc
-!.wgetrc
-!.gitignore
-!.gitconfig
-!.osx
-!.vimrc
+.idea/
 

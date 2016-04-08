@@ -33,8 +33,4 @@ command -v htop >/dev/null 2>&1 && alias top=sudo htop
 # Lock screen (requires password to unlock)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
-# Use the Temperature Monitor CLI app when wanted
-alias temperature="/Applications/TemperatureMonitor.app/Contents/MacOS/tempmonitor -c -l -a"
-
-alias intellij="open -a 'IntelliJ IDEA 13'"
 alias notes="atom ~/Dropbox/Work/notes"

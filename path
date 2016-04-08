@@ -1,8 +1,4 @@
 # $HOME/bin is already part of the path
 
-# Android SDK stuff
-PATH=$PATH:/opt/android-sdk/tools:/opt/android-sdk/platform-tools
-
-
 # This should be the last line in the file
 export PATH
