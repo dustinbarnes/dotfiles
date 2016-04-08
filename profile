@@ -1,9 +1,9 @@
 export PATH="$HOME/bin:$PATH"
 
-# Add path extensions in ~/.path
-# Add prompt customizations in ~/.bash_prompt
-# Add bash aliases in ~/.aliases
-for file in ~/.{path,prompt,exports,aliases,functions,completions}; do
+# Add path extensions in ~/dotfiles/path
+# Add prompt customizations in ~/dotfiles/bash_prompt
+# Add bash aliases in ~/dotfiles/aliases
+for file in ~/dotfiles/{path,prompt,exports,aliases,functions,completions}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file

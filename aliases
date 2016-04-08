@@ -2,7 +2,7 @@
 alias sudo='sudo '
 
 # Reload the profile chain
-alias reload="source $HOME/.profile"
+alias reload="$HOME/dotfiles/update.sh"
 
 # Easier Navigation
 alias ..='cd ..'
