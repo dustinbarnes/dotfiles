@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Make various utils do color
 export CLICOLOR=true
 
@@ -18,21 +20,15 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date"
 export LANG="en_US"
 export LC_ALL="en_US.UTF-8"
 
+# Programming Stuff
+export PYTHONIOENCODING='UTF-8';
+export GROOVY_HOME="$(brew --prefix groovy)/libexec"
+export JAVA_HOME="$(/usr/libexec/java_home)"
+export MAVEN_OPTS="-Xmx1024m"
+export NVM_DIR=~/.nvm
+
 # Enable colored grep output
 export GREP_OPTIONS='--color=auto'
 
 # Common less options
 export LESS=-Mi
-
-# Java Stuff
-export MAVEN_OPTS="-Xmx1024m -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true"
-export JAVA_HOME="$(/usr/libexec/java_home)"
-
-# Assuming groovy is installed from brew
-export GROOVY_HOME=/usr/local/opt/groovy/libexec
-
-# Docker config
-export DOCKER_HOST=tcp://192.168.33.10:2375
-
-# NodeJS Stuff (Installed from Brew)
-export NVM_DIR=~/.nvm

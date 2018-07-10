@@ -1,3 +1,10 @@
+# Add tab completion for many Bash commands
+if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
+	source "$(brew --prefix)/share/bash-completion/bash_completion";
+elif [ -f /etc/bash_completion ]; then
+	source /etc/bash_completion;
+fi;
+
 # Alias names
 complete -A alias unalias
 
@@ -59,8 +66,8 @@ _ssh() {
     fi
     return 0
 }
-complete -o bashdefault -o default -o nospace -F _ssh ssh scp ssh-copy-id 2>/dev/null \
-    || complete -o default -o nospace -F _ssh ssh scp ssh-copy-id
+complete -o bashdefault -o default -o nospace -F _ssh ssh scp 2>/dev/null \
+    || complete -o default -o nospace -F _ssh ssh scp
 
 # Reference the brew git completions script
 [[ -f /usr/local/etc/bash_completion.d/git-completion.bash ]] && source /usr/local/etc/bash_completion.d/git-completion.bash

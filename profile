@@ -8,7 +8,8 @@ for file in ~/dotfiles/{path,prompt,exports,aliases,functions,completions}; do
 done
 unset file
 
-shopt -s nocaseglob          # Ignores case when doing file expansion
+# Ignores case when doing file expansion
+shopt -s nocaseglob
 
 # Autocorrect fudged paths in cd calls
 shopt -s cdspell
@@ -18,6 +19,13 @@ shopt -s checkhash
 
 # Update columns and rows if window size changes
 shopt -s checkwinsize
+
+# Enable some Bash 4 features when possible:
+# * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
+# * Recursive globbing, e.g. `echo **/*.txt`
+for option in autocd globstar; do
+	shopt -s "$option" 2> /dev/null;
+done;
 
 # Put multi-line commands onto one line of history
 shopt -s cmdhist
