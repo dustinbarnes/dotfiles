@@ -24,7 +24,7 @@ export LC_ALL="en_US.UTF-8"
 export PYTHONIOENCODING='UTF-8';
 export GROOVY_HOME="$(brew --prefix groovy)/libexec"
 export JAVA_HOME="$(/usr/libexec/java_home)"
-export MAVEN_OPTS="-Xmx1024m"
+export MAVEN_OPTS="-Xmx1024m -XX:+TieredCompilation -XX:TieredStopAtLevel=1"
 export NVM_DIR=~/.nvm
 
 # Enable colored grep output

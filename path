@@ -1,4 +1,6 @@
 # $HOME/bin is already part of the path
 
+PATH=$PATH:/Users/dustinbarnes/Library/Python/3.7/bin
+
 # This should be the last line in the file
 export PATH
