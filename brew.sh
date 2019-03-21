@@ -41,15 +41,10 @@ brew install screen
 
 # Dev Tools
 brew cask install java
-brew install dex2jar
-brew install groovy
 brew install maven
-brew install scala
-brew install kotlin
-brew install gradle
+brew install nodejs
 brew install jq
 brew install yq
-brew install nvm
 brew install go --cross-compile-common
 brew install pcre
 brew install openssl
@@ -68,15 +63,10 @@ brew install unrar
 brew install xz
 
 # My GUI Apps
-brew cask install google-chrome
-brew cask install dropbox
-brew cask install atom
-brew cask install cd-to
+brew cask install cd-to-terminal
 brew cask install flux
-brew cask install vlc
 brew cask install caffeine
 brew cask install bettertouchtool
-brew cask install jadengeller-helium
 
 # Remove outdated versions from the cellar.
 brew cleanup
