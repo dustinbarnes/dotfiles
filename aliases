@@ -9,11 +9,6 @@ alias cd..='cd ..'
 alias ..='cd ..'
 alias ...='cd ../..'
 
-# Shortcuts
-alias db='cd ~/Dropbox'
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-
 # Listing Aliases
 alias ls='ls -F'
 alias l='ls -Al'
@@ -27,9 +22,13 @@ alias rm='rm -i'
 alias show_hidden="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide_hidden="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
+# URL Encoding Helpers
+alias urlencode='python -c "import urllib, sys; print urllib.quote(sys.argv[1])"'
+alias urldecode='python -c "import urllib, sys; print urllib.unquote(sys.argv[1])"'
+
 # Use some alternate programs that I forget to type properly
 #   top -> htop
-command -v htop >/dev/null 2>&1 && alias top=sudo htop
+command -v htop >/dev/null 2>&1 && alias top='sudo htop'
 
 # Lock screen (requires password to unlock)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"

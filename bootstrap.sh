@@ -10,7 +10,7 @@ pushd ~
 
 # Clone my dotfiles
 if [ ! -d "dotfiles" ]; then
-  git clone https://github.com/dustinbarnes/dotfiles.git
+  git clone https://lpgithub.dev.lprnd.net/dbarnes/dotfilies
 else
   pushd dotfiles
   git pull
