@@ -24,7 +24,7 @@ fi;
 brew install vim --with-lua --with-override-system-vi
 
 # GUI Apps
-brew cask install cd-to-terminal clipy caffeine bettertouchtool slack \
+brew cask install clipy caffeine bettertouchtool slack \
     docker iterm2 whatsapp obsidian postman vlc
 
 # Remove outdated versions from the cellar.
@@ -34,7 +34,8 @@ brew cleanup
 
 echo "Configuring SDKMAN!"
 if ! [ -x "$(command -v sdk)" ]; then
-  curl -s "https://get.sdkman.io?rcupdate=false" | bash
+  curl -s "https://get.sdkman.io" | bash
+  source ~/.sdkman/bin/sdkman-init.sh
 fi
 
 sdk install java 8.0.265.hs
