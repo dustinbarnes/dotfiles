@@ -38,9 +38,9 @@ if ! [ -x "$(command -v sdk)" ]; then
   source ~/.sdkman/bin/sdkman-init.sh
 fi
 
-sdk install java 8.0.265.hs
-sdk install java 11.0.8.hs
+sdk install java 8.0.265.hs-adpt
+sdk install java 11.0.8.hs-adpt
 sdk install maven 3.6.3
 sdk install gradle 6.6.1
 
-sdk use java 8.0.265.hs
+sdk use java 8.0.265.hs-adpt
