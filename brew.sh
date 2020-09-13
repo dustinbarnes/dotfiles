@@ -21,7 +21,7 @@ if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
 fi;
 
 # Install more recent versions of some macOS tools.
-brew install vim --with-lua --with-override-system-vi
+brew install vim --with-override-system-vi
 
 # GUI Apps
 brew cask install clipy caffeine bettertouchtool slack \
