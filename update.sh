@@ -6,7 +6,7 @@ pushd ~/dotfiles
 git pull
 
 # Clear out old rc files and re-link them.
-rc_files=( inputrc gitconfig vimrc wgetrc profile )
+rc_files=( inputrc gitconfig vimrc wgetrc bash_profile profile )
 
 for file in "${rc_files[@]}"; do
   rm -rf ~/.${file}
@@ -14,6 +14,6 @@ for file in "${rc_files[@]}"; do
 done
 unset file
 
-source ~/.profile
+source ~/.bash_profile
 
 popd
