@@ -4,7 +4,7 @@
 # It doesn't assume the rest of the dotfiles stuff is fetched or anything.
 
 # Run it like so:
-#    curl -s https://raw.githubusercontent.com/dustinbarnes/dotfiles/bootstrap.sh | bash
+#    curl -s https://raw.githubusercontent.com/dustinbarnes/dotfiles/master/bootstrap.sh | bash
 
 pushd ~
 
