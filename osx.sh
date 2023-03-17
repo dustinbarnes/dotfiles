@@ -20,12 +20,6 @@ sudo nvram SystemAudioVolume=" "
 # Disable transparency in the menu bar and elsewhere on Yosemite
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
-# Set highlight color to green
-defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
-
-# Set sidebar icon size to medium
-defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
-
 # Always show scrollbars
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
@@ -132,9 +126,6 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-# Increase sound quality for Bluetooth headphones/headsets
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
-
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
@@ -145,9 +136,6 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 20
-
-# Show language menu in the top right corner of the boot screen
-sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
 ###############################################################################
 # Screen                                                                      #
@@ -437,35 +425,35 @@ sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Vol
 # 	MENU_SPOTLIGHT_SUGGESTIONS (send search queries to Apple)
 # 	MENU_WEBSEARCH             (send search queries to Apple)
 # 	MENU_OTHER
-defaults write com.apple.spotlight orderedItems -array \
-	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
-	'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
-	'{"enabled" = 1;"name" = "DIRECTORIES";}' \
-	'{"enabled" = 1;"name" = "PDF";}' \
-	'{"enabled" = 1;"name" = "FONTS";}' \
-	'{"enabled" = 0;"name" = "DOCUMENTS";}' \
-	'{"enabled" = 0;"name" = "MESSAGES";}' \
-	'{"enabled" = 0;"name" = "CONTACT";}' \
-	'{"enabled" = 0;"name" = "EVENT_TODO";}' \
-	'{"enabled" = 0;"name" = "IMAGES";}' \
-	'{"enabled" = 0;"name" = "BOOKMARKS";}' \
-	'{"enabled" = 0;"name" = "MUSIC";}' \
-	'{"enabled" = 0;"name" = "MOVIES";}' \
-	'{"enabled" = 0;"name" = "PRESENTATIONS";}' \
-	'{"enabled" = 0;"name" = "SPREADSHEETS";}' \
-	'{"enabled" = 0;"name" = "SOURCE";}' \
-	'{"enabled" = 0;"name" = "MENU_DEFINITION";}' \
-	'{"enabled" = 0;"name" = "MENU_OTHER";}' \
-	'{"enabled" = 0;"name" = "MENU_CONVERSION";}' \
-	'{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
-	'{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
-	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
+# defaults write com.apple.spotlight orderedItems -array \
+# 	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
+# 	'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
+# 	'{"enabled" = 1;"name" = "DIRECTORIES";}' \
+# 	'{"enabled" = 1;"name" = "PDF";}' \
+# 	'{"enabled" = 1;"name" = "FONTS";}' \
+# 	'{"enabled" = 0;"name" = "DOCUMENTS";}' \
+# 	'{"enabled" = 0;"name" = "MESSAGES";}' \
+# 	'{"enabled" = 0;"name" = "CONTACT";}' \
+# 	'{"enabled" = 0;"name" = "EVENT_TODO";}' \
+# 	'{"enabled" = 0;"name" = "IMAGES";}' \
+# 	'{"enabled" = 0;"name" = "BOOKMARKS";}' \
+# 	'{"enabled" = 0;"name" = "MUSIC";}' \
+# 	'{"enabled" = 0;"name" = "MOVIES";}' \
+# 	'{"enabled" = 0;"name" = "PRESENTATIONS";}' \
+# 	'{"enabled" = 0;"name" = "SPREADSHEETS";}' \
+# 	'{"enabled" = 0;"name" = "SOURCE";}' \
+# 	'{"enabled" = 0;"name" = "MENU_DEFINITION";}' \
+# 	'{"enabled" = 0;"name" = "MENU_OTHER";}' \
+# 	'{"enabled" = 0;"name" = "MENU_CONVERSION";}' \
+# 	'{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
+# 	'{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
+# 	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
 # Load new settings before rebuilding the index
-killall mds > /dev/null 2>&1
-# Make sure indexing is enabled for the main volume
-sudo mdutil -i on / > /dev/null
-# Rebuild the index from scratch
-sudo mdutil -E / > /dev/null
+# killall mds > /dev/null 2>&1
+# # Make sure indexing is enabled for the main volume
+# sudo mdutil -i on / > /dev/null
+# # Rebuild the index from scratch
+# sudo mdutil -E / > /dev/null
 
 ###############################################################################
 # Terminal                                                                    #
