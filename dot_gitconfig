@@ -1,0 +1,48 @@
+[init]
+  defaultBranch = main
+[core]
+  excludesfile = ~/.gitignore
+[color]
+  ui = auto
+  interactive = auto
+  trustctime = false
+[user]
+  name = Dustin Barnes
+  # force an email address manually for each repo
+  # only really useful if you have multiple projects
+  useConfigOnly = true
+[credential]
+  helper = osxkeychain
+[merge]
+  log = true
+[push]
+  default = simple
+[pull]
+  rebase = true
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[alias]
+  # Configure e-mail addresses based on personal/work
+  mkpersonal = config user.email dustin.barnes@gmail.com
+  mkcelonis  = config user.email d.barnes@celonis.com
+
+  # Super common helpers
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  co = checkout
+  ci = commit
+  st = status
+  ahead = log @{u}..
+  behind = log ..@{u}
+
+  # Custom graph log (append any tree-ish)
+  graph = log --pretty=nice --date-order --graph
+  # Custom graph log for all branches
+  grapha = log --pretty=nice --date-order --graph --all
+
+# This allows any non-standard customizations (such as work-specific stuff)
+[include]
+  path = ~/.gitconfig.local

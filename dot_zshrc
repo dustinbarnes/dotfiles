@@ -1,0 +1,26 @@
+echo "---------- Loading .zshrc -------------"
+
+source /opt/homebrew/opt/git-extras/share/git-extras/git-extras-completion.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
+export PATH=$PATH:/opt/homebrew/opt/postgresql@13/bin
+
+
+# zsh options from `man zshoptions`
+
+setopt AUTO_CD     # executing directory performs cd
+setopt AUTO_MENU   # completing 2x shows a menu of options
+setopt GLOB        # uses globbing
+setopt APPEND_HISTORY    # don't clobber/reset, keep that history
+
+eval "$(starship init zsh)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
