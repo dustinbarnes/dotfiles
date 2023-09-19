@@ -1,6 +1,9 @@
 # Allow sudo of simple aliases
 alias sudo='sudo '
 
+# Because I can't type chezmoi without messing it up first
+alias cm='chezmoi'
+
 # Easier Navigation
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -14,6 +17,10 @@ alias l='ls -Al'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
+
+# Helpful by default
+alias df='df -h'
+alias du='du -h -d 2'
 
 # Show/hide hidden files in Finder
 alias show_hidden="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"

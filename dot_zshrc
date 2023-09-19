@@ -4,8 +4,15 @@ source /opt/homebrew/opt/git-extras/share/git-extras/git-extras-completion.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
+# Up/Down key searches history based on what's already typed
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+# Quick forward/backward words with option+left/right
+bindkey '^[^[[D' backward-word
+bindkey '^[b' backward-word
+bindkey '^[^[[C' forward-word
+bindkey '^[f' forward-word
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
@@ -18,15 +25,30 @@ export PATH=$PATH:/opt/homebrew/opt/postgresql@13/bin
 
 export CLICOLOR=1
 
-
 # zsh options from `man zshoptions`
 setopt AUTO_CD     # executing directory performs cd
 setopt AUTO_MENU   # completing 2x shows a menu of options
 setopt GLOB        # uses globbing
-setopt APPEND_HISTORY    # don't clobber/reset, keep that history
 
+# History Config
+HISTSIZE=100000000
+SAVEHIST=100000000
+setopt APPEND_HISTORY
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_DUPS
+
+# Menu-based completion
+setopt auto_list
+setopt auto_menu
+setopt always_to_end
+#  Select with arrow keys
+zstyle ':completion:*' menu select
+
+# Starship prompt (https://starship.rs/)
+export STARSHIP_CONFIG="$HOME/.dotfiles/starship.toml"
 eval "$(starship init zsh)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
