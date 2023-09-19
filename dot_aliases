@@ -1,9 +1,6 @@
 # Allow sudo of simple aliases
 alias sudo='sudo '
 
-# Reload the profile chain
-alias reload="$HOME/dotfiles/update.sh"
-
 # Easier Navigation
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -26,9 +23,9 @@ alias hide_hidden="defaults write com.apple.finder AppleShowAllFiles -bool false
 alias urlencode='python -c "import urllib, sys; print urllib.quote(sys.argv[1])"'
 alias urldecode='python -c "import urllib, sys; print urllib.unquote(sys.argv[1])"'
 
-# Use some alternate programs that I forget to type properly
-#   top -> htop
-command -v htop >/dev/null 2>&1 && alias top='sudo htop'
-
 # Lock screen (requires password to unlock)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# Shows my most used commands
+alias myusage="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
+

@@ -10,3 +10,9 @@ export NVM_DIR="$HOME/.nvm"
 # This file is for sensitive data or other overrides I don't want in a public repo
 [[ -r "$HOME/.zprofile.local" ]] && source "$HOME/.zprofile.local"
 
+# Load aliases
+[[ -r "$HOME/.aliases" ]] && source "$HOME/.aliases" 
+# Load exports
+[[ -r "$HOME/.exports" ]] && source "$HOME/.exports"
+
+
