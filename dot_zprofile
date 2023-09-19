@@ -2,10 +2,11 @@ echo "------- Loading .zprofile -------"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export GH_USER=dustinbarnes
-export GH_TOKEN="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"
-export CEL_DB=~/ws/celonisdb
-
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" 
+
+# This file is for sensitive data or other overrides I don't want in a public repo
+[[ -r "$HOME/.zprofile.local" ]] && source "$HOME/.zprofile.local"
+
