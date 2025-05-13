@@ -27,7 +27,6 @@
 [alias]
   # Configure e-mail addresses based on personal/work
   mkpersonal = config user.email dustin.barnes@gmail.com
-  mkcelonis  = config user.email d.barnes@celonis.com
 
   # Super common helpers
   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
